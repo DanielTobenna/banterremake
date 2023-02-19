@@ -1,0 +1,612 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon"/>
+    <link rel="stylesheet" href="{% static 'dashboard/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'dashboard/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'dashboard/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'dashboard/animate.css' %}">
+    <script>
+        document.write("<link rel='stylesheet' type='text/css' href='/static/dashboard/main.css?v=" + Date.now() + "'>")
+    </script>
+     <script defer src="https://use.fontawesome.com/releases/v5.12.0/js/all.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.12.0/js/v4-shims.js"></script>
+
+
+
+<script>$(window).scroll(function() {        var scroll = $(window).scrollTop();    if (scroll >= 50) {        $("#header-main-menu").addClass("darkHeader");    } else {        $("#header-main-menu").removeClass("darkHeader");    }});</script> 
+
+<!-- Smartsupp Live Chat script -->
+<script type="text/javascript">
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = '97f3a7d9d8e97aa0d92d879ddab9f9f63d0968fd';
+window.smartsupp||(function(d) {
+  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+  c.type='text/javascript';c.charset='utf-8';c.async=true;
+  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
+</script>
+</head>
+
+<body>
+<header class="header-dashboard" style="position:relative;z-index:999;">
+	<nav class="navbar navbar-expand-lg navbar-light main-nav">
+		<div class="container-fluid">
+			<div class="navbar-brand d-flex align-items-center">
+				<a href="{% url 'home' %}" class="d-flex">
+					<img src="{% static 'lionhead.png' %}" width=80px height=80px>
+					
+				</a>
+				
+				
+				<span class="d-flex align-items-center header-switch pl-2">
+					<p class="pl-2 pr-2"><b>Switch</b><br>Dashboard</p>
+											<button class="small-button d-flex align-items-center" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								
+									<label class="m-0 ml-2 mr-1">US Dollar</label>
+									<i class="fas fa-caret-down mr-1"></i>
+					</button>
+					<div class="dropdown-menu">
+						
+					   <a class="dropdown-item d-flex align-items-center" href="?a=account">
+									
+									<label class="m-0 ml-2 mr-1">Dollar</label>
+					  </a>
+					  
+					  
+					</div>
+				</span>
+				
+				
+			</div>
+			<button class="navbar-toggler collapsed" data-toggle="collapse" data-target="#MainNav">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			
+			<div class="collapse navbar-collapse accountMenu" id="MainNav">
+				<ul class="navbar-nav mr-auto mt-sms-3">
+					<li class="nav-item">
+						<a class="nav-link text-center" href="{% url 'dashboard' %}"><i class="icon icon-sidebar "></i> Dashboard</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link  text-center" href="{% url 'deposit' %}"><i class="icon icon-organize "></i> Deposit</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link  text-center" href="{% url 'withdrawal' %}"><i class="icon icon-ads "></i>Withdraw</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link  text-center" href="{% url 'myreferals' %}"><i class="icon icon-widget "></i>Referrals</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link  text-center" href="{% url 'history' %}"><i class="icon icon-widget "></i>Transaction history</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link  text-center" href="{% url 'logout' %}"><i class="icon icon-widget "></i>Logout</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link  text-center" href="{% url 'create_bonus' %}"><i class="icon icon-toggle "></i>Create Bonus</a>
+					</li>
+				</ul>
+				
+				<ul class="navbar-nav navbar-nav--right ml-auto d-flex flex-nowrap shadow-left">
+					<li class="nav-item">
+						<a class="nav-link  text-center" href="{% url 'account_settings' %}"><i class="icon icon-toggle "></i>Settings</a>
+					</li>
+				</ul>
+				
+				
+					
+			</div>
+		</div>
+	</nav>
+ 
+</header>
+<main>
+
+
+
+<title>Account</title>
+
+
+ 
+<b>Security Note: please, verify <a href="{% url 'account_settings' %}">your account</a> to keep your account safe.</b>
+
+<section id="dashboard">
+	<div class="container full-height">
+
+<div class="row phone-nodisplay mb-4">
+	
+	
+    <div class="col-lg-12 col-xl-8 d-flex align-items-stretch flex-column">
+		 
+	
+			<div class="status-box errors p-3 mb-4" style="background:green;">
+				<p><i class="fas fa-bell"></i>Security Note: please, verify <a href="{% url 'account_settings' %}" style="font-size:.75rem;color:#374A5F;text-decoration:underline;font-weight:500;">your account</a> to keep your account safe.</p>
+			</div>
+		
+		        <div class="wbox depboxHome d-flex flex-column">
+            
+			<div class="d-flex align-items-center title p-3 pr-4 pl-4">
+				<i class="icon icon-organize "></i>
+				<h6 class="m-0 ml-3">Profit Calculator</h6>
+				
+			</div>
+            
+				<span class="changeType d-flex align-items-center pt-4 pr-4 pl-4">
+					<p>You are currently in the</p>
+					
+											<button class="small-button d-flex align-items-center" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								
+									<label class="m-0 ml-2 mr-1">US Dollar</label>
+									<i class="fas fa-caret-down mr-1"></i>
+					</button>
+					<div class="dropdown-menu">
+						
+					   <a class="dropdown-item d-flex align-items-center" href="?a=account">
+								
+									<label class="m-0 ml-2 mr-1">Dollar</label>
+					  </a>
+					  
+					</div>
+					
+					<p>dashboard</p>
+				</span>
+				
+			<div class="p-4 d-flex flex-column justify-content-center flex-fill">
+			
+				<div class="depInput d-flex align-items-center mb-4">
+					<div class="d-flex align-items-center pl-3 pr-3 p-2 pl-md-4 pr-md-4 plaN">
+						<h4 class="m-0">Input</h4>
+						<span>Investment<br>Capital to Calculate</span>
+					</div>
+					
+					<input type="number" value="100" id="inputsmoney" autocomplete="off" required="" min="35" step="0.1" maxlength="6" style="min-width:100px;" onfocus="calcthis();" oninput="calcthis();" onblur="calcthis();">
+					
+					<div class="d-flex align-items-center currsym pl-2 pr-4">
+						<svg width="16" height="16" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 486 486"><path d="M243,0C108.8,0,0,108.8,0,243s108.8,243,243,243s243-108.8,243-243S377.2,0,243,0z M312.8,338.8 c-10.6,12.9-24.4,21.6-40.5,26c-7,1.9-10.2,5.6-9.8,12.9c0.3,7.2,0,14.3-0.1,21.5c0,6.4-3.3,9.8-9.6,10
+									c-4.1,0.1-8.2,0.2-12.3,0.2c-3.6,0-7.2,0-10.8-0.1c-6.8-0.1-10-4-10-10.6c-0.1-5.2-0.1-10.5-0.1-15.7c-0.1-11.6-0.5-12-11.6-13.8
+									c-14.2-2.3-28.2-5.5-41.2-11.8c-10.2-5-11.3-7.5-8.4-18.3c2.2-8,4.4-16,6.9-23.9c1.8-5.8,3.5-8.4,6.6-8.4c1.8,0,4.1,0.9,7.2,2.5
+									c14.4,7.5,29.7,11.7,45.8,13.7c2.7,0.3,5.4,0.5,8.1,0.5c7.5,0,14.8-1.4,21.9-4.5c17.9-7.8,20.7-28.5,5.6-40.9
+									c-5.1-4.2-11-7.3-17.1-10c-15.7-6.9-32-12.1-46.8-21c-24-14.4-39.2-34.1-37.4-63.3c2-33,20.7-53.6,51-64.6
+									c12.5-4.5,12.6-4.4,12.6-17.4c0-4.4-0.1-8.8,0.1-13.3c0.3-9.8,1.9-11.5,11.7-11.8c1.1,0,2.3,0,3.4,0c1.9,0,3.8,0,5.7,0
+									c0.8,0,1.6,0,2.3,0c18.6,0,18.6,0.8,18.7,20.9c0.1,14.8,0.1,14.8,14.8,17.1c11.3,1.8,22,5.1,32.4,9.7c5.7,2.5,7.9,6.5,6.1,12.6
+									c-2.6,9-5.1,18.1-7.9,27c-1.8,5.4-3.5,7.9-6.7,7.9c-1.8,0-4-0.7-6.8-2.1c-14.4-7-29.5-10.4-45.3-10.4c-2,0-4.1,0.1-6.1,0.2
+									c-4.7,0.3-9.3,0.9-13.7,2.8c-15.6,6.8-18.1,24-4.8,34.6c6.7,5.4,14.4,9.2,22.3,12.5c13.8,5.7,27.6,11.2,40.7,18.4
+									C330.9,250.9,342.1,303.2,312.8,338.8z" fill="#199A8E"></path></svg>
+						<p class="m-0 ml-2">USD</p>
+				
+
+				</div>
+					
+					<a href="{% url 'deposit' %}" class="d-flex align-items-center deposit-btn">
+						<span class="d-flex all-center">Deposit</span>
+						<i class="fas fa-long-arrow-alt-right d-flex all-center"></i>
+					</a>
+				</div>
+				<p class="m-0 mt-2 mb-1" style="font-size:11px!important;">
+					<label style="color:#F89F35;"></label><b> </br>                                                                                     
+				</p>  <span>  <hr color="orange"></span></br>                                                                               <marquee><b><p style="font-size:12px!important; color:green;">BELOW ARE THE INVESTMENT PROFIT OF THE CAPITAL YOU ENTERED ABOVE. REMEMBER SOME PLANS HAS MINIMUM COST VALUE HIGHER THAN SOME.</marquee>          </b>                  </p>                         
+				
+				
+			</div>			
+		
+        </div>
+    </div>
+	<div class="col-lg-5 col-xl-4 mt-4 mt-xl-0 d-flex flex-column align-items-stretch member-info">
+        <div class="ybox d-flex flex-column" style="flex:1;">
+            <h6 class="d-flex align-items-center username p-3 pr-4 pl-4">
+				<i class="icon icon-user mr-2"></i>
+				<span style="flex:1;">{{ request.user.username }}</span>
+				<a href="{% url 'account_settings' %}"><i class="fas fa-cog"></i></a>
+			</h6>
+			
+                     <div class="d-flex flex-column align-items-stretch justify-content-center flex-fill">
+                        <div class="m-3 mr-4 ml-4 accBalance d-flex align-items-center p-2 pt-3 pb-3">
+                           <div class="svg d-flex all-center p-3">
+                              <svg width="24" height="24" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 486 486">
+                                 <path d="M243,0C108.8,0,0,108.8,0,243s108.8,243,243,243s243-108.8,243-243S377.2,0,243,0z M312.8,338.8 c-10.6,12.9-24.4,21.6-40.5,26c-7,1.9-10.2,5.6-9.8,12.9c0.3,7.2,0,14.3-0.1,21.5c0,6.4-3.3,9.8-9.6,10
+                                    c-4.1,0.1-8.2,0.2-12.3,0.2c-3.6,0-7.2,0-10.8-0.1c-6.8-0.1-10-4-10-10.6c-0.1-5.2-0.1-10.5-0.1-15.7c-0.1-11.6-0.5-12-11.6-13.8
+                                    c-14.2-2.3-28.2-5.5-41.2-11.8c-10.2-5-11.3-7.5-8.4-18.3c2.2-8,4.4-16,6.9-23.9c1.8-5.8,3.5-8.4,6.6-8.4c1.8,0,4.1,0.9,7.2,2.5
+                                    c14.4,7.5,29.7,11.7,45.8,13.7c2.7,0.3,5.4,0.5,8.1,0.5c7.5,0,14.8-1.4,21.9-4.5c17.9-7.8,20.7-28.5,5.6-40.9
+                                    c-5.1-4.2-11-7.3-17.1-10c-15.7-6.9-32-12.1-46.8-21c-24-14.4-39.2-34.1-37.4-63.3c2-33,20.7-53.6,51-64.6
+                                    c12.5-4.5,12.6-4.4,12.6-17.4c0-4.4-0.1-8.8,0.1-13.3c0.3-9.8,1.9-11.5,11.7-11.8c1.1,0,2.3,0,3.4,0c1.9,0,3.8,0,5.7,0
+                                    c0.8,0,1.6,0,2.3,0c18.6,0,18.6,0.8,18.7,20.9c0.1,14.8,0.1,14.8,14.8,17.1c11.3,1.8,22,5.1,32.4,9.7c5.7,2.5,7.9,6.5,6.1,12.6
+                                    c-2.6,9-5.1,18.1-7.9,27c-1.8,5.4-3.5,7.9-6.7,7.9c-1.8,0-4-0.7-6.8-2.1c-14.4-7-29.5-10.4-45.3-10.4c-2,0-4.1,0.1-6.1,0.2
+                                    c-4.7,0.3-9.3,0.9-13.7,2.8c-15.6,6.8-18.1,24-4.8,34.6c6.7,5.4,14.4,9.2,22.3,12.5c13.8,5.7,27.6,11.2,40.7,18.4
+                                    C330.9,250.9,342.1,303.2,312.8,338.8z" fill="#199A8E"></path>
+                              </svg>
+                           </div>
+                           <div class="d-flex flex-column">
+                              <p class="m-0 p-0 pBalance">Account Balance</p>
+                              <h4 class="m-0 p-0 mBalance">{{client_bal}} <small> USD</small></h4>
+                           </div>
+                           </br>
+                        </div>
+                        </br> 
+                        <div class="m-3 mr-4 ml-4 accBalance d-flex align-items-center p-2 pt-3 pb-3">
+                           <div class="svg d-flex all-center p-3">
+                              <svg width="24" height="24" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 486 486">
+                                 <path d="M243,0C108.8,0,0,108.8,0,243s108.8,243,243,243s243-108.8,243-243S377.2,0,243,0z M312.8,338.8 c-10.6,12.9-24.4,21.6-40.5,26c-7,1.9-10.2,5.6-9.8,12.9c0.3,7.2,0,14.3-0.1,21.5c0,6.4-3.3,9.8-9.6,10
+                                    c-4.1,0.1-8.2,0.2-12.3,0.2c-3.6,0-7.2,0-10.8-0.1c-6.8-0.1-10-4-10-10.6c-0.1-5.2-0.1-10.5-0.1-15.7c-0.1-11.6-0.5-12-11.6-13.8
+                                    c-14.2-2.3-28.2-5.5-41.2-11.8c-10.2-5-11.3-7.5-8.4-18.3c2.2-8,4.4-16,6.9-23.9c1.8-5.8,3.5-8.4,6.6-8.4c1.8,0,4.1,0.9,7.2,2.5
+                                    c14.4,7.5,29.7,11.7,45.8,13.7c2.7,0.3,5.4,0.5,8.1,0.5c7.5,0,14.8-1.4,21.9-4.5c17.9-7.8,20.7-28.5,5.6-40.9
+                                    c-5.1-4.2-11-7.3-17.1-10c-15.7-6.9-32-12.1-46.8-21c-24-14.4-39.2-34.1-37.4-63.3c2-33,20.7-53.6,51-64.6
+                                    c12.5-4.5,12.6-4.4,12.6-17.4c0-4.4-0.1-8.8,0.1-13.3c0.3-9.8,1.9-11.5,11.7-11.8c1.1,0,2.3,0,3.4,0c1.9,0,3.8,0,5.7,0
+                                    c0.8,0,1.6,0,2.3,0c18.6,0,18.6,0.8,18.7,20.9c0.1,14.8,0.1,14.8,14.8,17.1c11.3,1.8,22,5.1,32.4,9.7c5.7,2.5,7.9,6.5,6.1,12.6
+                                    c-2.6,9-5.1,18.1-7.9,27c-1.8,5.4-3.5,7.9-6.7,7.9c-1.8,0-4-0.7-6.8-2.1c-14.4-7-29.5-10.4-45.3-10.4c-2,0-4.1,0.1-6.1,0.2
+                                    c-4.7,0.3-9.3,0.9-13.7,2.8c-15.6,6.8-18.1,24-4.8,34.6c6.7,5.4,14.4,9.2,22.3,12.5c13.8,5.7,27.6,11.2,40.7,18.4
+                                    C330.9,250.9,342.1,303.2,312.8,338.8z" fill="#199A8E"></path>
+                              </svg>
+                           </div>
+                           <div class="d-flex flex-column">
+                              <p class="m-0 p-0 pBalance">Active Investment</p>
+                              <h4 class="m-0 p-0 mBalance">{{client_deposit}} <small> USD</small></h4>
+                           </div>
+                           </br>
+                        </div>
+                        <div class="row m-0 mr-4 ml-4 mb-4 earningSmall">
+                           <div class="col-6 p-0">
+                              <span>Total Earnings</span>
+                              <p>{{client_bal}} <span> USD</span></p>
+                           </div>
+                           <div class="col-6 p-0">
+                              <span>Profit</span>
+                              <p>{{client_profit}} <span> USD</span></p>
+                           </div>
+                           <div class="col-12 mt-4 p-0">
+                              <a href="?a=withdraw" class="d-flex align-items-center withdraw-btn">
+                              <span class="d-flex all-center">Withdraw</span>
+                              <i class="fas fa-long-arrow-alt-right d-flex all-center"></i>
+                              </a>
+                           </div>
+                        </div>
+                     </div> </br>                                                          
+			
+			<div class="pt-3 pr-4 pl-4 pb-3  d-flex flex-column dataAccount mt-auto">
+				<div class="d-flex align-items-center p-0">
+					<i class="icon icon-sidebar"></i>
+					<span>Join Date</span>
+					<p>{{client_date_joined}}</p>
+				</div>
+			</div>
+           
+        </div>
+		
+    </div>
+
+	<div class="col-lg-7 col-xl-12 mt-4">
+        <div class="wbox p-4">
+			<div class="row mainAccStatus">
+				
+							<div class="col-md-6 balance-boxes rightBorder mb-4 pb-4 mb-md-0 pb-md-0">
+								<div class="d-flex align-items-center title mb-4">
+									<h5 class="m-0">Investment Preview</h5>
+									<span>Total <br>Deposit</span>
+								</div>
+								
+								<div class="d-flex align-items-center number p-2 pr-3" style="background:#E9F2EC;">
+									<i class="icon icon-transform head-icon m-0" style="background:#fff;"></i>
+									<b>{{client_bal}}</b>
+									<p class="m-0">USD</p>
+								</div>
+								<div class="d-flex mt-4">
+									<div class="row flex-fill">
+										
+										<div class="col-xl-6 mt-1 mb-1 mt-xl-0 mb-xl-0  d-flex align-items-center statusNum">
+											<p class="m-0">Last<br>Deposit</p>
+											<b>Last deposit</b>
+											<span>USD</span>										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="col-md-6 balance-boxes">
+								<div class="d-flex align-items-center title mb-4">
+									<h5 class="m-0">Withdrawal Preview</h5>
+									<span>Total <br>Withdrawals</span>
+								</div>
+								
+								<div class="d-flex align-items-center number p-2 pr-3">
+									<i class="icon icon-chart2 head-icon m-0" style="background:#fff;"></i>
+									<b>{{client_bal}}</b>
+									<p class="m-0">USD</p>
+								</div>
+								<div class="d-flex mt-4">
+									<div class="row flex-fill">
+										<div class="col-xl-6 mt-1 mb-1 mt-xl-0 mb-xl-0  flex-grow-1 statusNum d-flex align-items-center">
+											<p class="m-0">Last<br>Withdrawal</p>
+										 <b>Last withdrawal</b>
+											<span>USD</span>										</div>
+									
+									</div>
+								</div>
+							</div>
+							
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row mb-4">
+	<div class="col-12">
+        <div class="wbox p-4 d-flex">
+			<div class="row flex-fill">
+			
+			
+				<div class="col-12 col-md-6 col-xl-4 d-flex">
+					<div>
+						<svg id="Layer_35" viewBox="0 0 64 64" height="40" width="40" xmlns="http://www.w3.org/2000/svg"><path d="m25.649 48.937-2.623 2.624c-.662.66-1.026 1.539-1.026 2.474v6.965h-4.351c.218-.456.351-.961.351-1.5 0-1.93-1.57-3.5-3.5-3.5h-8.5v2h8.5c.827 0 1.5.673 1.5 1.5s-.673 1.5-1.5 1.5h-3.5-6.5c-.827 0-1.5-.673-1.5-1.5v-3.5c0-4.963 4.038-9 9-9h3.488c3.149 0 6.199-.924 8.82-2.671l2.246-1.497-1.109-1.664-2.246 1.497c-.54.36-1.102.676-1.68.955.929-1.307 1.481-2.899 1.481-4.62 0-4.411-3.589-8-8-8s-8 3.589-8 8c0 2.498 1.152 4.73 2.951 6.199-5.088.963-8.951 5.436-8.951 10.801v3.5c0 1.93 1.57 3.5 3.5 3.5h6.5 3.5 9.5v-8.965c0-.4.156-.777.439-1.061l2.624-2.624zm-16.649-9.937c0-3.309 2.691-6 6-6s6 2.691 6 6-2.691 6-6 6-6-2.691-6-6z" fill="#353448"></path><path d="m58 27h-28c-2.757 0-5 2.243-5 5v16c0 2.757 2.243 5 5 5h9l1-5h8l1 5h9c2.757 0 5-2.243 5-5v-16c0-2.757-2.243-5-5-5z" fill="#f0bc5e"></path>
+						<g fill="#353448"><path d="m54 5h-18c0-2.206-1.794-4-4-4h-18c-2.206 0-4 1.794-4 4v12c0 2.206 1.794 4 4 4h5.734l8.266 4.723v-4.723h4c0 2.206 1.794 4 4 4h3v4.723l8.266-4.723h6.734c2.206 0 4-1.794 4-4v-12c0-2.206-1.794-4-4-4zm-28 14v3.277l-5.734-3.277h-3.96c.89-2.373 3.154-4 5.777-4h1.835c2.622 0 4.887 1.627 5.777 4zm-3-6c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3-1.346 3-3 3zm9-4v10h-.202c-.724-2.635-2.692-4.682-5.198-5.547.863-.898 1.4-2.112 1.4-3.453 0-2.757-2.243-5-5-5s-5 2.243-5 5c0 1.341.537 2.555 1.4 3.453-2.507.865-4.474 2.911-5.198 5.547h-.202c-1.103 0-2-.897-2-2v-12c0-1.103.897-2 2-2h18c1.103 0 2 .897 2 2v.556c-1.19.694-2 1.97-2 3.444zm14.734 14-5.734 3.277v-3.277h-2.694c.89-2.373 3.154-4 5.777-4h1.835c2.622 0 4.887 1.627 5.777 4zm-1.734-6c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3-1.346 3-3 3zm11 4c0 1.103-.897 2-2 2h-.202c-.724-2.635-2.692-4.682-5.198-5.547.863-.898 1.4-2.112 1.4-3.453 0-2.757-2.243-5-5-5s-5 2.243-5 5c0 1.341.537 2.555 1.4 3.453-2.507.865-4.474 2.911-5.198 5.547h-.202c-1.103 0-2-.897-2-2v-12c0-1.103.897-2 2-2h18c1.103 0 2 .897 2 2z"></path><path d="m55 57h-4.18l-2-10h-9.64l-2 10h-4.18c-2.757 0-5 2.243-5 5v1h32v-1c0-2.757-2.243-5-5-5zm-14.18-8h6.36l1.6 8h-9.56zm-10.649 12c.413-1.164 1.525-2 2.829-2h22c1.304 0 2.416.836 2.829 2z"></path><path d="m57 31h2v2h-2z"></path><path d="m57 35h2v2h-2z"></path><path d="m57 39h2v2h-2z"></path></g></svg> 
+					</div>
+					<div class="d-flex flex-column pl-4">
+						<h6 class="mb-2">Regular: 5%</h6>
+						<p class="mb-2" style="font-size:12px;">
+							Refer us to your friends to earn more income as they make investments. 
+						</p>
+					
+					</div>
+				</div>
+				
+				
+				<div class="col-12 col-md-6 col-xl-4 mt-4 mt-md-0 d-flex">
+					<div>
+						<svg viewBox="0 0 496 496" height="40" width="40" xmlns="http://www.w3.org/2000/svg"><path d="m449.574219 170.398438-14.925781 5.753906c8.855468 23 13.351562 47.167968 13.351562 71.847656s-4.496094 48.847656-13.351562 71.847656l14.925781 5.753906c9.578125-24.839843 14.425781-50.945312 14.425781-77.601562s-4.847656-52.761719-14.425781-77.601562zm0 0" fill="#353448"></path><g fill="#f0bc5e"><path d="m213.40625 200.6875c-2.855469 4.390625-7.78125 7.3125-13.40625 7.3125-8.839844 0-16-7.160156-16-16 0-8.128906 6.078125-14.769531 13.929688-15.792969-20.546876-24.558593-51.402344-40.207031-85.929688-40.207031-61.855469 0-112 50.144531-112 112s50.144531 112 112 112 112-50.144531 112-112c0-16.929688-3.863281-32.929688-10.59375-47.3125zm0 0"></path><path d="m400 0c-53.015625 0-96 42.984375-96 96 0 45.039062 31.0625 82.726562 72.902344 93.089844-.542969-1.609375-.902344-3.296875-.902344-5.089844 0-8.839844 7.160156-16 16-16s16 7.160156 16 16c0 2.808594-.785156 5.40625-2.054688 7.695312 50.230469-3.078124 90.054688-44.679687 90.054688-95.695312 0-53.015625-42.984375-96-96-96zm0 0"></path><path d="m400 304c-32.183594 0-60.601562 15.894531-78.015625 40.199219 7.886719.984375 14.015625 7.640625 14.015625 15.800781 0 8.839844-7.160156 16-16 16-4.542969 0-8.625-1.910156-11.535156-4.953125-2.890625 9.136719-4.464844 18.855469-4.464844 28.953125 0 53.015625 42.984375 96 96 96s96-42.984375 96-96-42.984375-96-96-96zm0 0"></path></g>
+						<g fill="#353448"><path d="m376 240h16v16h-16zm0 0"></path><path d="m408 240h16v16h-16zm0 0"></path><path d="m344 240h16v16h-16zm0 0"></path><path d="m176 296c0-26.742188-16.503906-49.679688-39.855469-59.230469 4.832031-5.609375 7.855469-12.808593 7.855469-20.769531v-16c0-17.648438-14.351562-32-32-32s-32 14.351562-32 32v16c0 7.960938 3.023438 15.160156 7.855469 20.769531-23.351563 9.550781-39.855469 32.488281-39.855469 59.230469v16h128zm-80-96c0-8.824219 7.175781-16 16-16s16 7.175781 16 16v16c0 8.824219-7.175781 16-16 16s-16-7.175781-16-16zm-32 96c0-26.472656 21.527344-48 48-48s48 21.527344 48 48zm0 0"></path><path d="m448 128c0-18.078125-10.054688-33.839844-24.855469-42.023438 5.457031-5.746093 8.855469-13.457031 8.855469-21.976562 0-17.648438-14.351562-32-32-32s-32 14.351562-32 32c0 8.519531 3.398438 16.230469 8.855469 21.976562-14.800781 8.183594-24.855469 23.945313-24.855469 42.023438v16h96zm-48-80c8.824219 0 16 7.175781 16 16s-7.175781 16-16 16-16-7.175781-16-16 7.175781-16 16-16zm-32 80c0-17.648438 14.351562-32 32-32s32 14.351562 32 32zm0 0"></path><path d="m423.144531 389.976562c5.457031-5.746093 8.855469-13.457031 8.855469-21.976562 0-17.648438-14.351562-32-32-32s-32 14.351562-32 32c0 8.519531 3.398438 16.230469 8.855469 21.976562-14.800781 8.183594-24.855469 23.945313-24.855469 42.023438v16h96v-16c0-18.078125-10.054688-33.839844-24.855469-42.023438zm-23.144531-37.976562c8.824219 0 16 7.175781 16 16s-7.175781 16-16 16-16-7.175781-16-16 7.175781-16 16-16zm-32 80c0-17.648438 14.351562-32 32-32s32 14.351562 32 32zm0 0"></path><path d="m324.175781 336.425781-16.582031-99.546875c7.230469-4.03125 12.191406-11.613281 12.359375-20.429687l53.222656-17.746094c4.390625 5.617187 11.160157 9.296875 18.824219 9.296875 13.230469 0 24-10.769531 24-24s-10.769531-24-24-24c-13.078125 0-23.710938 10.527344-23.953125 23.550781l-53.222656 17.746094c-4.390625-5.617187-11.160157-9.296875-18.824219-9.296875-1.753906 0-3.449219.214844-5.097656.566406l-80.253906-129.636718c2.726562-3.441407 4.550781-7.625 5.070312-12.21875 31.875-5.167969 65.050781-2.527344 95.882812 7.785156 2.132813-5.03125 4.75-9.800782 7.671876-14.34375-22.921876-8.03125-46.867188-12.152344-71.273438-12.152344-12.039062 0-24.070312 1.054688-35.863281 3.03125-4.28125-6.617188-11.6875-11.03125-20.136719-11.03125-13.007812 0-23.574219 10.425781-23.9375 23.34375-48.949219 19.558594-89.917969 57.3125-113.46875 104.617188 7.710938-4.617188 15.957031-8.417969 24.726562-11.089844 22.351563-34.902344 55.390626-62.582032 93.847657-78.167969 4.398437 5.617187 11.167969 9.296875 18.832031 9.296875 1.753906 0 3.441406-.230469 5.078125-.59375l80.273437 129.671875c-.449218.5625-.945312 1.082031-1.335937 1.683594l-52.246094-13.066407c-1.183593-12.144531-11.320312-21.695312-23.769531-21.695312-13.230469 0-24 10.769531-24 24s10.769531 24 24 24c8.335938 0 15.679688-4.28125 19.984375-10.761719l52.246094 13.066407c.488281 5.054687 2.511719 9.617187 5.65625 13.261718l-105.628907 184.867188c-1.386718-.25-2.800781-.433594-4.257812-.433594-6.527344 0-12.441406 2.640625-16.777344 6.878906-29.191406-16.207031-54-39.703125-71.933594-67.757812-8.769531-2.671875-17.015624-6.472656-24.730468-11.097656 19.578125 39.328124 51.210937 72.128906 89.707031 93.289062-.097656.894531-.265625 1.765625-.265625 2.6875 0 13.230469 10.769531 24 24 24 7.542969 0 14.199219-3.566406 18.601562-9.023438 19.871094 5.886719 40.46875 9.023438 61.398438 9.023438 24.40625 0 48.351562-4.121094 71.289062-12.152344-2.9375-4.566406-5.5625-9.351562-7.703124-14.40625-38.625 12.910156-80.753907 13.71875-119.59375 2.421875-.03125-5.910156-2.28125-11.261719-5.871094-15.4375l105.632812-184.859375c.023438.007813.046875 0 .078125.007813l16.582031 99.539062c-7.367187 4.101563-12.414062 11.878907-12.414062 20.886719 0 13.230469 10.769531 24 24 24s24-10.769531 24-24c0-11.800781-8.585938-21.585938-19.824219-23.574219zm-156.175781 111.574219c-4.40625 0-8-3.59375-8-8s3.59375-8 8-8 8 3.59375 8 8-3.59375 8-8 8zm224-272c4.40625 0 8 3.59375 8 8s-3.59375 8-8 8-8-3.59375-8-8 3.59375-8 8-8zm-88 40c0 4.40625-3.59375 8-8 8s-8-3.59375-8-8 3.59375-8 8-8 8 3.59375 8 8zm-120-168c0-4.40625 3.59375-8 8-8s8 3.59375 8 8-3.59375 8-8 8-8-3.59375-8-8zm16 152c-4.40625 0-8-3.59375-8-8s3.59375-8 8-8 8 3.59375 8 8-3.59375 8-8 8zm120 168c-4.40625 0-8-3.59375-8-8s3.59375-8 8-8 8 3.59375 8 8-3.59375 8-8 8zm0 0"></path></g></svg>
+					</div>
+					<div class="d-flex flex-column pl-4">
+						<h6 class="mb-2">Representative: 10%</h6>
+						<p class="mb-2" style="font-size:12px;">
+							Double up on your earnings by joining representatives Refer Up to 20 active user to qualify. 
+						</p>
+					
+					</div>
+				</div>
+				
+				
+				<div class="col-12 col-lg-12 col-xl-4 mt-4 mt-xl-0 d-flex flex-column">
+					<div class="d-flex flex-fill align-items-center withdraw-btn" style="border-radius:5px;border:1px solid #E7E7EF;">
+							<input class="d-flex all-center" style="flex:1;background:none;border:0;outline:0;text-align:center;font-size:12px;border-right:1px solid #E7E7EF;" readonly="readonly" value="www.cooperhoystedsinvestmentservice.com/main-view/{{client_code}}" id="reflink">
+							<button class="icon icon-todo d-flex all-center btn" data-clipboard-action="copy" data-clipboard-target="#reflink" style="background:#fff;margin:0;border:0;outline:0;width:36px;height:36px;font-size:14px;" data-original-title="" title=""></button>
+					</div>
+				
+				</div>
+				
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+  
+<br><br>
+
+
+
+
+</div>
+</div>
+</main>
+
+
+<script src="{% static 'dashboard/jquery-3.4.1.min.js' %}"></script>
+<script src="{% static 'dashboard/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'dashboard/owl.carousel.min.js' %}"></script>
+<script src="{% static 'dashboard/tilt.jquery.min.js' %}"></script>
+
+<script src="{% static 'dashboard/clipboard.min.js' %}"></script>
+
+<script>$(window).scroll(function() {        var scroll = $(window).scrollTop();    if (scroll >= 50) {        $("#header-main-menu").addClass("darkHeader");    } else {        $("#header-main-menu").removeClass("darkHeader");    }});</script>
+
+
+</body></html>
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="bannersModal" tabindex="-1" role="dialog" aria-labelledby="bannersModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="bannersModalTitle">Tradeversexpert.com Banners</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		<div class="row m-0">
+			<div class="col-12 d-flex flex-column p-0">
+				
+				<div class="banner-list d-flex flex-column">
+                    <label class="fl1">970x90.gif</label>
+                    <label class="fl1"><img src="https://bynamic.co/banners/970x90.gif"></label>
+                    <label class="fl1"><input readonly value="&#60;a href=&#34;https://tradenary.com/?ref=Test target=&#34;_blank&#34;&#62;&#60;img src=&#34;https://bynamic.co/banners/970x90.gif&#34; /&#62;&#60;/a&#62;"></label>
+				</div>
+
+
+				<div class="banner-list d-flex flex-column">
+                    <label class="fl1">728x90.gif</label>
+                    <label class="fl1"><img src="https://bynamic.co/banners/728x90.gif"></label>
+                    <label class="fl1"><input readonly value="&#60;a href=&#34;https://tradenary.com/?ref=Test target=&#34;_blank&#34;&#62;&#60;img src=&#34;https://bynamic.co/banners/728x90.gif&#34; /&#62;&#60;/a&#62;"></label>
+                </div>
+
+				<div class="banner-list d-flex flex-column">
+                    <label class="fl1">468x60.gif</label>
+					<label class="fl1"><img src="https://bynamic.co/banners/468x60.gif"></label>
+					<label class="fl1"><input readonly value="&#60;a href=&#34;https://tradenary.com/?ref=Test target=&#34;_blank&#34;&#62;&#60;img src=&#34;https://bynamic.co/banners/468x60.gif&#34; /&#62;&#60;/a&#62;"></label>
+                </div>
+
+				<div class="banner-list d-flex flex-column">
+					<label class="fl1">320x100.gif</label>
+					<label class="fl1"><img src="https://bynamic.co/banners/320x100.gif"></label>
+					<label class="fl1"><input readonly value="&#60;a href=&#34;https://tradenary.com/?ref=Test target=&#34;_blank&#34;&#62;&#60;img src=&#34;https://bynamic.co/banners/320x100.gif&#34; /&#62;&#60;/a&#62;"></label>
+                </div>
+
+				<div class="banner-list d-flex flex-column">                
+                    <label class="fl1">320x50.gif</label>
+                    <label class="fl1"><img src="https://bynamic.co/banners/320x50.gif"></label>
+                    <label class="fl1"><input readonly value="&#60;a href=&#34;https://tradenary.com/?ref=Test target=&#34;_blank&#34;&#62;&#60;img src=&#34;https://bynamic.co/banners/320x50.gif&#34; /&#62;&#60;/a&#62;"></label>
+                </div>
+
+				<div class="banner-list d-flex flex-column">
+                    <label class="fl1">234x60.gif</label>
+                    <label class="fl1"><img src="https://bynamic.co/banners/234x60.gif"></label>
+                    <label class="fl1"><input readonly value="&#60;a href=&#34;https://tradenary.com/?ref=Test target=&#34;_blank&#34;&#62;&#60;img src=&#34;https://bynamic.co/banners/234x60.gif&#34; /&#62;&#60;/a&#62;"></label>
+                </div>
+
+				<div class="banner-list d-flex flex-column">
+                    <label class="fl1">250x250.gif</label>
+                    <label class="fl1"><img src="https://bynamic.co/banners/250x250.gif"></label>
+                    <label class="fl1"><input readonly value="&#60;a href=&#34;https://tradenary.com/?ref=Test target=&#34;_blank&#34;&#62;&#60;img src=&#34;https://bynamic.co/banners/250x250.gif&#34; /&#62;&#60;/a&#62;"></label>
+                </div>
+
+				<div class="banner-list d-flex flex-column">
+                    <label class="fl1">200x200.gif</label>
+                    <label class="fl1"><img src="https://bynamic.co/banners/200x200.gif"></label>
+                    <label class="fl1"><input readonly value="&#60;a href=&#34;https://tradenary.com/?ref=Test target=&#34;_blank&#34;&#62;&#60;img src=&#34;https://bynamic.co/banners/200x200.gif&#34; /&#62;&#60;/a&#62;"></label>
+                </div>
+
+				<div class="banner-list d-flex flex-column">
+                    <label class="fl1">125x125.gif</label>
+                    <label class="fl1"><img src="https://bynamic.co/banners/125x125.gif"></label>
+                    <label class="fl1"><input readonly value="&#60;a href=&#34;https://tradenary.com/?ref=Test target=&#34;_blank&#34;&#62;&#60;img src=&#34;https://bynamic.co/banners/125x125.gif&#34; /&#62;&#60;/a&#62;"></label>
+                </div>
+
+				<div class="banner-list d-flex flex-column">
+                    <label class="fl1">336x280.gif</label>
+                    <label class="fl1"><img src="https://bynamic.co/banners/336x280.gif"></label>
+                    <label class="fl1"><input readonly value="&#60;a href=&#34;https://tradenary.com/?ref=Test target=&#34;_blank&#34;&#62;&#60;img src=&#34;https://bynamic.co/banners/336x280.gif&#34; /&#62;&#60;/a&#62;"></label>
+                </div>
+
+
+				<div class="banner-list d-flex flex-column">
+                    <label class="fl1">300x250.gif</label>
+                    <label class="fl1"><img src="https://bynamic.co/banners/300x250.gif"></label>
+                    <label class="fl1"><input readonly value="&#60;a href=&#34;https://tradenary.com/?ref=Test target=&#34;_blank&#34;&#62;&#60;img src=&#34;https://bynamic.co/banners/300x250.gif&#34; /&#62;&#60;/a&#62;"></label>
+                </div>
+
+				<div class="banner-list d-flex flex-column">
+                    <label class="fl1">180x150.gif</label>
+                    <label class="fl1"><img src="https://bynamic.co/banners/180x150.gif"></label>
+                    <label class="fl1"><input readonly value="&#60;a href=&#34;https://tradenary.com/?ref=Test target=&#34;_blank&#34;&#62;&#60;img src=&#34;https://bynamic.co/banners/180x150.gif&#34; /&#62;&#60;/a&#62;"></label>
+                </div>
+
+
+				<div class="banner-list d-flex flex-column">
+                    <label class="fl1">300x600.gif</label>
+                    <label class="fl1"><img src="https://bynamic.co/banners/300x600.gif"></label>
+                    <label class="fl1"><input readonly value="&#60;a href=&#34;https://tradenary.com/?ref=Test target=&#34;_blank&#34;&#62;&#60;img src=&#34;https://bynamic.co/banners/300x600.gif&#34; /&#62;&#60;/a&#62;"></label>
+                </div>
+
+
+				<div class="banner-list d-flex flex-column">
+                    <label class="fl1">160x600.gif</label>
+                    <label class="fl1"><img src="https://bynamic.co/banners/160x600.gif"></label>
+                    <label class="fl1"><input readonly value="&#60;a href=&#34;https://tradenary.com/?ref=Test target=&#34;_blank&#34;&#62;&#60;img src=&#34;https://bynamic.co/banners/160x600.gif&#34; /&#62;&#60;/a&#62;"></label>
+                </div>
+
+				<div class="banner-list d-flex flex-column">
+                    <label class="fl1">120x600.gif</label>
+                    <label class="fl1"><img src="https://bynamic.co/banners/120x600.gif"></label>
+                    <label class="fl1"><input readonly value="&#60;a href=&#34;https://tradenary.com/?ref=Test target=&#34;_blank&#34;&#62;&#60;img src=&#34;https://bynamic.co/banners/120x600.gif&#34; /&#62;&#60;/a&#62;"></label>
+                </div>
+
+	  
+			</div>
+		</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+                 
+ <script>
+
+$('button').tooltip({
+  trigger: 'click',
+  placement: 'bottom'
+});
+
+function setTooltip(btn, message) {
+  $(btn).tooltip('hide')
+    .attr('data-original-title', message)
+    .tooltip('show');
+}
+
+function hideTooltip(btn) {
+  setTimeout(function() {
+    $(btn).tooltip('hide');
+  }, 1000);
+}
+
+// Clipboard
+
+var clipboard = new Clipboard('button');
+
+clipboard.on('success', function(e) {
+  setTooltip(e.trigger, 'Copied!');
+  hideTooltip(e.trigger);
+});
+
+clipboard.on('error', function(e) {
+  setTooltip(e.trigger, 'Failed!');
+  hideTooltip(e.trigger);
+});
+ </script>
+
+
+          
+
+
+<script type="text/javascript">
+
+
+function calcthis()
+{
+	var depo = document.getElementById("inputsmoney").value;
+
+	if (depo < 0.01) {
+		document.getElementById("inpvar1").innerHTML =  '35';
+		document.getElementById("inpvar2").innerHTML =  '1000';
+		document.getElementById("inpvar3").innerHTML =  '5000';
+		document.getElementById("inpvar4").innerHTML =  '10000';
+	}
+	else if (depo > 10000000) {
+		document.getElementById("inpvar1").innerHTML =  '--';
+		document.getElementById("inpvar2").innerHTML =  '--';
+		document.getElementById("inpvar3").innerHTML =  '--';
+		document.getElementById("inpvar4").innerHTML =  '--';
+	}
+	else {
+		var n1 = depo/100*7;
+		var m1 = n1.toFixed(2);
+		var n2 = depo/100*15;
+		var m2 = n2.toFixed(2);
+		var n3 = depo/100*20;
+		var m3 = n3.toFixed(2);
+		var n4 = depo/100*50;
+		var m4 = n4.toFixed(2);
+		document.getElementById("inpvar1").innerHTML =  m1 + " <small>USD</small>";
+		document.getElementById("inpvar2").innerHTML =  m2 + " <small>USD</small>";
+		document.getElementById("inpvar3").innerHTML =  m3 + " <small>USD</small>";
+		document.getElementById("inpvar4").innerHTML =  m4 + " <small>USD</small>";
+	}
+};
+
+
+</script>
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zxx" class="js">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Softnio">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description">
+    <!-- Fav Icon  -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
+    <!-- Site Title  -->
+    <title>Login - R.M Cooper Hoysteds</title>
+    <!-- Vendor Bundle CSS -->
+    <link rel="stylesheet" href="{% static 'dashboardAssets/assets/css/vendor.bundleba3a.css' %}">
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="{% static 'dashboardAssets/assets/css/styleba3a.css' %}">
+
+</head>
+
+<body class="user-ath">
+
+<div class="user-ath-page">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8  text-center">
+                <div class="user-ath-logo">
+                    <a href="{% url 'home' %}">
+                        <img style="height: 50px; width: 50px;" src="{% static 'images/cooper.png' %}"  alt="icon">
+                    </a>
+                </div>
+                    <div class="user-ath-box">
+        <h4>Login to Your Account</h4>
+         <form method="POST">
+            {% csrf_token %}
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Username</label>
+                 <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="">
+                </div>
+                <div class="mb-3">
+                     <label for="inputPassword4" class="form-label">Password</label>
+                    <input type="password" name="password" class="form-control" id="inputPassword4">
+              </div>
+              <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+
+    </div>
+    <div class="gaps-2x"></div>
+    <div class="form-note">
+        Not a member? <a href="{% url 'signup' %}">Sign up now</a>
+    </div>
+        <div class="form-note">
+        Not a member? <a href="{% url 'reset_password' %}">Forgot password?</a>
+    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- JavaScript (include all script here) -->
+<script src="{% static 'dashboardAssets/assets/js/jquery.bundleba3a.js' %}"></script>
+<script src="{% static 'dashboardAssets/assets/js/scriptba3a.js' %}"></script>
+</body>
+
+<!-- Mirrored from kuverainvest.com/login by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Aug 2021 01:47:52 GMT -->
+</html>

@@ -1,0 +1,362 @@
+{% extends 'banterapp/base.html' %}
+{% load static %}
+{% block body %}
+
+    <main class="nk-pages tc-light">
+            <section class="section" id="faqs">
+
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-6">
+                    <div class="section-head section-head-s2">
+                        <h2 class="title title-xl" title="FAQS">FAQS</h2>
+                        <p>Below we’ve provided a bit of info. If you have any other questions, please get in touch.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Block @s  -->
+            <div class="nk-block">
+                <div class="row justify-content-center">
+                    <div class="col-xl-10">
+
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="tab-2-1">
+                                <div class="accordion" id="acc-1">
+                                    <div class="accordion-item accordion-item-s3 current">
+                                        <h5 class="accordion-title accordion-title-sm" data-toggle="collapse"
+                                            data-target="#acc-1-1">What is Cryptocurrency? <span
+                                                class="accordion-icon"></span></h5>
+                                        <div id="acc-1-1" class="collapse show" data-parent="#acc-1">
+                                            <div class="accordion-content">
+                                                <p>A cryptocurrency (or crypto currency) is a digital asset designed to
+                                                    work as a medium of exchange and store of value using cryptography
+                                                    to secure the transactions and to control the creation of additional
+                                                    units of the currency. Cryptocurrencies are classified as a subset
+                                                    of digital currencies and are also classified as a subset of
+                                                    alternative currencies and virtual currencies.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item accordion-item-s3">
+                                        <h5 class="accordion-title accordion-title-sm collapsed" data-toggle="collapse"
+                                            data-target="#acc-1-2">What is a wallet address?<span
+                                                class="accordion-icon"></span></h5>
+                                        <div id="acc-1-2" class="collapse" data-parent="#acc-1">
+                                            <div class="accordion-content">
+                                                <p>A Cryptocurrency address, or simply address, is an identifier of
+                                                    26-35 alphanumeric characters, beginning with the number 1 , 3 or
+                                                    bc1 that represents a possible destination for a bitcoin payment.
+                                                    ... It is also possible to get a Bitcoin address using an account at
+                                                    an exchange or online wallet service .</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item accordion-item-s3">
+                                        <h5 class="accordion-title accordion-title-sm collapsed" data-toggle="collapse"
+                                            data-target="#acc-1-3">Is my initial capital protected? <span
+                                                class="accordion-icon"></span></h5>
+                                        <div id="acc-1-3" class="collapse" data-parent="#acc-1">
+                                            <div class="accordion-content">
+                                                <p>Yes, all deposited funds are fully insured and will be refunded if
+                                                    the contract is terminated before the end of the contract.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item accordion-item-s3">
+                                        <h5 class="accordion-title accordion-title-sm collapsed" data-toggle="collapse"
+                                            data-target="#acc-1-4">How long does a contract last?<span
+                                                class="accordion-icon"></span></h5>
+                                        <div id="acc-1-4" class="collapse" data-parent="#acc-1">
+                                            <div class="accordion-content">
+                                                <p>Each trading/mining contracts last for a minimum period of 365days,
+                                                    contracts can be renewed before or at the end of this time
+                                                    frame.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item accordion-item-s3">
+                                        <h5 class="accordion-title accordion-title-sm collapsed" data-toggle="collapse"
+                                            data-target="#acc-1-5">Do I need mining or trading experience?<span
+                                                class="accordion-icon"></span></h5>
+                                        <div id="acc-1-5" class="collapse" data-parent="#acc-1">
+                                            <div class="accordion-content">
+                                                <p>No experience is required!, the aim of R.M Cooper Hoysteds is to provide
+                                                    services formerly reserved for the elite to the general
+                                                    population.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item accordion-item-s3">
+                                        <h5 class="accordion-title accordion-title-sm collapsed" data-toggle="collapse"
+                                            data-target="#acc-1-6">What is GH/s?<span
+                                                class="accordion-icon"></span></h5>
+                                        <div id="acc-1-6" class="collapse" data-parent="#acc-1">
+                                            <div class="accordion-content">
+                                                <p>GH/s (gigahashes per second) - measurement unit of hashrate
+                                                    (computing power). Hashrate is the speed at which a computer is
+                                                    completing an operation in the cryptographic code. Which directly
+                                                    influences mining payout. The greater your hashrate, the more
+                                                    Bitcoin you'll be able to mine.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item accordion-item-s3">
+                                        <h5 class="accordion-title accordion-title-sm collapsed" data-toggle="collapse"
+                                            data-target="#acc-1-7">How long do I need to wait for my payouts?<span
+                                                class="accordion-icon"></span></h5>
+                                        <div id="acc-1-7" class="collapse" data-parent="#acc-1">
+                                            <div class="accordion-content">
+                                                <p>Your trading/mining payouts will be automatically credited into your
+                                                    receiving wallet address every week on Friday 00:00 GMT time
+                                                    automatically. However sometimes due to system override there might
+                                                    be a delay of not more than 24 hours. In the case of service
+                                                    termination your initial capital and pending profits will be
+                                                    credited in not more than four working days after proper
+                                                    verification.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item accordion-item-s3">
+                                        <h5 class="accordion-title accordion-title-sm collapsed" data-toggle="collapse"
+                                            data-target="#acc-1-8">Is there a minimum or maximum purchase amount?<span
+                                                class="accordion-icon"></span></h5>
+                                        <div id="acc-1-8" class="collapse" data-parent="#acc-1">
+                                            <div class="accordion-content">
+                                                <p>Minimum purchase amounts differs for every contract, you may find it
+                                                    on our pricing page. If you are looking to invest more than
+                                                    5000000USD please request to contact a manager at
+                                                    support@CooperHoystedsinvestmentservice.com or in our live chat.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item accordion-item-s3">
+                                        <h5 class="accordion-title accordion-title-sm collapsed" data-toggle="collapse"
+                                            data-target="#acc-1-9">Why reinvesting your mining/trading profit is a smart
+                                            way?<span
+                                                class="accordion-icon"></span></h5>
+                                        <div id="acc-1-9" class="collapse" data-parent="#acc-1">
+                                            <div class="accordion-content">
+                                                <p>You will be receiving weekly returns, and you may use your returns to
+                                                    automatically reinvest in into power to keep constantly increasing
+                                                    your mining hash-rate and trading diversification, therefore
+                                                    increasing your returns as well. This is how you can maximize your
+                                                    returns without buying additional contracts.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item accordion-item-s3">
+                                        <h5 class="accordion-title accordion-title-sm collapsed" data-toggle="collapse"
+                                            data-target="#acc-1-10">How secure are my cryptocurrencies?<span
+                                                class="accordion-icon"></span></h5>
+                                        <div id="acc-1-10" class="collapse" data-parent="#acc-1">
+                                            <div class="accordion-content">
+                                                <p>The overwhelming majority of system funds are stored in offline, cold
+                                                    wallets. Only approximately 0.5% of crypto assets are accessible in
+                                                    hot wallets for day-to-day platform operations. As an added
+                                                    protection, the cold wallets are not available from the platform or
+                                                    the platform servers. The funds in offline cold storage require
+                                                    manual intervention by several members of our management to access.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item accordion-item-s3">
+                                        <h5 class="accordion-title accordion-title-sm collapsed" data-toggle="collapse"
+                                            data-target="#acc-1-10">What currencies are accepted?<span
+                                                class="accordion-icon"></span></h5>
+                                        <div id="acc-1-10" class="collapse" data-parent="#acc-1">
+                                            <div class="accordion-content">
+                                                <p>At R.M Cooper Hoysteds you can fund your account Bitcoin(BTC),
+                                                    Bitcoincash(BCH), Ethereum(ETH), Ripple (XRP), Stellar (XLM) and
+                                                    bank deposit. Please note: bank deposits are only available for
+                                                    deposits of 500000usd and above and attracts a 5% processing fee.
+
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item accordion-item-s3">
+                                        <h5 class="accordion-title accordion-title-sm collapsed" data-toggle="collapse"
+                                            data-target="#acc-1-10">How do I join and start earning?<span
+                                                class="accordion-icon"></span></h5>
+                                        <div id="acc-1-10" class="collapse" data-parent="#acc-1">
+                                            <div class="accordion-content">
+                                                <p>To start your journey simply <a style="color: #46bdf4" href="{% url 'signup' %}"
+                                                                                   class="link link-regular">CLICK HERE</a>
+                                                     and a customer care representative will get back to you.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="tab-2-2">
+                                <div class="accordion" id="acc-2">
+                                    <div class="accordion-item accordion-item-s3 current">
+                                        <h5 class="accordion-title accordion-title-sm" data-toggle="collapse"
+                                            data-target="#acc-2-1">What is ICO Crypto? <span
+                                                class="accordion-icon"></span></h5>
+                                        <div id="acc-2-1" class="collapse show" data-parent="#acc-2">
+                                            <div class="accordion-content">
+                                                <p>Once ICO period is launched, You can purchase Tokens with Etherum,
+                                                    Bitcoin or Litecoin. You can also tempor incididunt ut labore et
+                                                    dolore magna aliqua sed do eiusmod eaque ipsa.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item accordion-item-s3">
+                                        <h5 class="accordion-title accordion-title-sm collapsed" data-toggle="collapse"
+                                            data-target="#acc-2-2">What cryptocurrencies can I use to purchase? <span
+                                                class="accordion-icon"></span></h5>
+                                        <div id="acc-2-2" class="collapse" data-parent="#acc-2">
+                                            <div class="accordion-content">
+                                                <p>Once ICO period is launched, You can purchased Token with Etherum,
+                                                    Bitcoin or Litecoin. You can also tempor incididunt ut labore et
+                                                    dolore magna aliqua sed do eiusmod eaque ipsa.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item accordion-item-s3">
+                                        <h5 class="accordion-title accordion-title-sm collapsed" data-toggle="collapse"
+                                            data-target="#acc-2-3">How can I participate in the ICO Token sale? <span
+                                                class="accordion-icon"></span></h5>
+                                        <div id="acc-2-3" class="collapse" data-parent="#acc-2">
+                                            <div class="accordion-content">
+                                                <p>Once ICO period is launched, You can purchased Token with Etherum,
+                                                    Bitcoin or Litecoin. You can also tempor incididunt ut labore et
+                                                    dolore magna aliqua sed do eiusmod eaque ipsa.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item accordion-item-s3">
+                                        <h5 class="accordion-title accordion-title-sm collapsed" data-toggle="collapse"
+                                            data-target="#acc-2-4">How do I benefit from the ICO Token? <span
+                                                class="accordion-icon"></span></h5>
+                                        <div id="acc-2-4" class="collapse" data-parent="#acc-2">
+                                            <div class="accordion-content">
+                                                <p>Once ICO period is launched, You can purchased Token with Etherum,
+                                                    Bitcoin or Litecoin. You can also tempor incididunt ut labore et
+                                                    dolore magna aliqua sed do eiusmod eaque ipsa.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="tab-2-3">
+                                <div class="accordion" id="acc-3">
+                                    <div class="accordion-item accordion-item-s3 current">
+                                        <h5 class="accordion-title accordion-title-sm" data-toggle="collapse"
+                                            data-target="#acc-3-1">What is ICO Crypto? <span
+                                                class="accordion-icon"></span></h5>
+                                        <div id="acc-3-1" class="collapse show" data-parent="#acc-3">
+                                            <div class="accordion-content">
+                                                <p>Once ICO period is launched, You can purchased Token with Etherum,
+                                                    Bitcoin or Litecoin. You can also tempor incididunt ut labore et
+                                                    dolore magna aliqua sed do eiusmod eaque ipsa.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item accordion-item-s3">
+                                        <h5 class="accordion-title accordion-title-sm collapsed" data-toggle="collapse"
+                                            data-target="#acc-3-2">What cryptocurrencies can I use to purchase? <span
+                                                class="accordion-icon"></span></h5>
+                                        <div id="acc-3-2" class="collapse" data-parent="#acc-3">
+                                            <div class="accordion-content">
+                                                <p>Once ICO period is launched, You can purchased Token with Etherum,
+                                                    Bitcoin or Litecoin. You can also tempor incididunt ut labore et
+                                                    dolore magna aliqua sed do eiusmod eaque ipsa.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item accordion-item-s3">
+                                        <h5 class="accordion-title accordion-title-sm collapsed" data-toggle="collapse"
+                                            data-target="#acc-3-3">How can I participate in the ICO Token sale? <span
+                                                class="accordion-icon"></span></h5>
+                                        <div id="acc-3-3" class="collapse" data-parent="#acc-3">
+                                            <div class="accordion-content">
+                                                <p>Once ICO period is launched, You can purchased Token with Etherum,
+                                                    Bitcoin or Litecoin. You can also tempor incididunt ut labore et
+                                                    dolore magna aliqua sed do eiusmod eaque ipsa.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item accordion-item-s3">
+                                        <h5 class="accordion-title accordion-title-sm collapsed" data-toggle="collapse"
+                                            data-target="#acc-3-4">How do I benefit from the ICO Token? <span
+                                                class="accordion-icon"></span></h5>
+                                        <div id="acc-3-4" class="collapse" data-parent="#acc-3">
+                                            <div class="accordion-content">
+                                                <p>Once ICO period is launched, You can purchased Token with Etherum,
+                                                    Bitcoin or Litecoin. You can also tempor incididunt ut labore et
+                                                    dolore magna aliqua sed do eiusmod eaque ipsa.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="tab-2-4">
+                                <div class="accordion" id="acc-4">
+                                    <div class="accordion-item accordion-item-s3 current">
+                                        <h5 class="accordion-title accordion-title-sm" data-toggle="collapse"
+                                            data-target="#acc-4-1">What is ICO Crypto? <span
+                                                class="accordion-icon"></span></h5>
+                                        <div id="acc-4-1" class="collapse show" data-parent="#acc-4">
+                                            <div class="accordion-content">
+                                                <p>Once ICO period is launched, You can purchased Token with Etherum,
+                                                    Bitcoin or Litecoin. You can also tempor incididunt ut labore et
+                                                    dolore magna aliqua sed do eiusmod eaque ipsa.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item accordion-item-s3">
+                                        <h5 class="accordion-title accordion-title-sm collapsed" data-toggle="collapse"
+                                            data-target="#acc-4-2">What cryptocurrencies can I use to purchase? <span
+                                                class="accordion-icon"></span></h5>
+                                        <div id="acc-4-2" class="collapse" data-parent="#acc-4">
+                                            <div class="accordion-content">
+                                                <p>Once ICO period is launched, You can purchased Token with Etherum,
+                                                    Bitcoin or Litecoin. You can also tempor incididunt ut labore et
+                                                    dolore magna aliqua sed do eiusmod eaque ipsa.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item accordion-item-s3">
+                                        <h5 class="accordion-title accordion-title-sm collapsed" data-toggle="collapse"
+                                            data-target="#acc-4-3">How can I participate in the ICO Token sale? <span
+                                                class="accordion-icon"></span></h5>
+                                        <div id="acc-4-3" class="collapse" data-parent="#acc-4">
+                                            <div class="accordion-content">
+                                                <p>Once ICO period is launched, You can purchased Token with Etherum,
+                                                    Bitcoin or Litecoin. You can also tempor incididunt ut labore et
+                                                    dolore magna aliqua sed do eiusmod eaque ipsa.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item accordion-item-s3">
+                                        <h5 class="accordion-title accordion-title-sm collapsed" data-toggle="collapse"
+                                            data-target="#acc-4-4">How do I benefit from the ICO Token? <span
+                                                class="accordion-icon"></span></h5>
+                                        <div id="acc-4-4" class="collapse" data-parent="#acc-4">
+                                            <div class="accordion-content">
+                                                <p>Once ICO period is launched, You can purchased Token with Ethereum,
+                                                    Bitcoin or Litecoin. You can also tempor incididunt ut labore et
+                                                    dolore magna aliqua sed do eiusmod eaque ipsa.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- .block @e  -->
+        </div>
+
+    </section>
+    </main>
+ {% endblock %}

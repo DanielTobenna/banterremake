@@ -1,0 +1,137 @@
+{% extends 'banterapp/base.html' %}
+{% load static %}
+{% block body %}
+
+    <main class="nk-pages tc-light">
+            <section class="section" id="faqs">
+
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-6">
+                    <div class="section-head section-head-s2">
+                        <h2 class="title title-xl" title="Choose Your Portfolio">Choose Your Portfolio.</h2>
+                        <p>Below we’ve provided infos concerning our available portfolios.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Block @s  -->
+            <div class="nk-block">
+                <div class="row justify-content-center">
+                    <div class="col-xl-10">
+                        
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="tab-2-1">
+                                <div class="accordion" id="acc-1">
+                                    <div class="accordion-item accordion-item-s3 current">
+                                        <h5 class="accordion-title accordion-title-sm" data-toggle="collapse"
+                                            data-target="#acc-1-1">Reporting<span
+                                                class="accordion-icon"></span></h5>
+                                        <div id="acc-1-1" class="collapse show" data-parent="#acc-1">
+                                            <div class="accordion-content">
+                                                <p>We employ an unprecedented proprietary investment system to define and execute your
+investment strategy. A registered broker/dealer and FINRA/SIPC member will execute all
+trades and act as the custodian of your account. We will place all transactions directly
+with the selected broker/dealer and the custodian of record will provide all trade
+confirmations, monthly brokerage statements,</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item accordion-item-s3">
+                                        <h5 class="accordion-title accordion-title-sm collapsed" data-toggle="collapse"
+                                            data-target="#acc-1-2">CAUTIOUS PORTFOLIO<span
+                                                class="accordion-icon"></span></h5>
+                                        <div id="acc-1-2" class="collapse" data-parent="#acc-1">
+                                            <div class="accordion-content">
+                                                <p>Suitable for investors who are cautious by nature or close to
+retirement and who seek steady growth but are willing to
+forego possible higher returns for steady performance and less
+volatility. Returns from this strategy should be slightly better than
+those available from a high street deposite account, although the
+value of the investment could fall as well as rise. Investors in this
+strategy would feel uncomfortable if their investments rose and
+fell in value rapidly. This strategy will maintain a broad spread of
+investments, including higher exposure to less volatile asset
+classes such as money market funds, government bonds and
+absolute return strategies to help guard against significant falls in
+equity markets. <br>
+<a href="{% url 'deposite' %}">Dive In</a>
+</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item accordion-item-s3">
+                                        <h5 class="accordion-title accordion-title-sm collapsed" data-toggle="collapse"
+                                            data-target="#acc-1-3">CONSERVATIVE PORTFOLIO <span
+                                                class="accordion-icon"></span></h5>
+                                        <div id="acc-1-3" class="collapse" data-parent="#acc-1">
+                                            <div class="accordion-content">
+                                                <p>Suitable for investors who are conservative by nature or close to
+retirement and who seek steady growth but are willing to
+forego possible higher returns for steady performance and less
+volatility. Returns from this strategy should be better than those
+available from a high street deposite account, although the value of
+the Investment could fall as well as rise. Investors in this strategy
+would feel uncomfortable if their investments fell significantly in
+value in any one year. This strategy will maintain a broad spread of
+investments, including higher exposure to less volatile asset
+classes such as fixed income and absolute return strategies to
+help guard against significant falls in equity markets.<br>
+<a href="{% url 'deposite' %}">Dive In</a>
+</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item accordion-item-s3">
+                                        <h5 class="accordion-title accordion-title-sm collapsed" data-toggle="collapse"
+                                            data-target="#acc-1-4">BALANCED PORTFOLIO<span
+                                                class="accordion-icon"></span></h5>
+                                        <div id="acc-1-4" class="collapse" data-parent="#acc-1">
+                                            <div class="accordion-content">
+                                                <p>Suitable for investors who are seeking longer term growth
+potential with at least a medium term time horizon and who are
+prepared to accept a moderate level of volatility of returns as the
+price for potential growth. This strategy is designed to balance risk
+and reward and is appropriate for investors looking for higher
+returns than those available from a high street deposit account
+and willing to accept a certain amount of fluctuation in the value
+of their investments as a result. Investors in this strategy would
+feel uncomfortable if their investments were to fall significantly in
+value in any one year. This strategy will maintain a broad spread of
+assets, but with a greater emphasis on equities.<br>
+<a href="{% url 'deposite' %}">Dive In</a>
+</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item accordion-item-s3">
+                                        <h5 class="accordion-title accordion-title-sm collapsed" data-toggle="collapse"
+                                            data-target="#acc-1-5">ADVANCED PORTFOLIO<span
+                                                class="accordion-icon"></span></h5>
+                                        <div id="acc-1-5" class="collapse" data-parent="#acc-1">
+                                            <div class="accordion-content">
+                                                <p>A combination progressive and Adventurous, Suitable for investors
+willing to accept a much higher level of risk on their investments in
+return for potentially, higher returns in the longer run. Investors in
+this strategy are willing to accept what might be significant short
+term fluctuations in the value of their investments as a result. They
+would feel comfortable if their investments fell in value more than 3
+months in any one year and might well see this as an ideal time to
+invest more. This strategy will maintain a higher exposure to more
+volatile investments, including equities and commodities.<br>
+<a href="{% url 'deposite' %}">Dive In</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- .block @e  -->
+        </div>
+
+    </section>
+    </main>
+ {% endblock %}

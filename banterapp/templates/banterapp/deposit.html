@@ -1,0 +1,267 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cooper Hoysteds</title>
+    <!-- Favicon icon -->
+    <link rel="icon" href="{% static 'images/favicon.png' %}"/>
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="{% static 'epiruswallet.com/epirus3/waves.min.css' %}">
+    <link rel="stylesheet" href="{% static 'epiruswallet.com/epirus3/toastr.min.css' %}">
+    <link rel="stylesheet" href="{% static 'epiruswallet.com/epirus3/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'epiruswallet.com/epirus3/style.css' %}">
+</head>
+
+<body class="dashboard">
+
+<div id="preloader">
+    <div class="sk-three-bounce">
+        <div class="sk-child sk-bounce1"></div>
+        <div class="sk-child sk-bounce2"></div>
+        <div class="sk-child sk-bounce3"></div>
+    </div>
+</div>
+
+<div id="main-wrapper">
+
+    <div class="header dashboard" style="background-color: blue !important;">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <nav class="navbar navbar-expand-lg navbar-light px-0">
+                        <a class="navbar-brand" href="{% url 'home' %}"><img src="" alt=""></a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                             <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'account_settings' %}">Settings</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dashboard_log my-2">
+                            <div class="d-flex align-items-center">
+                                <div class="account_money">
+                                    <ul>
+                                        <li class="crypto">
+                                            
+                                            <span style="color: blue !important;">{{total_balance}}</span>
+                                           
+                                            <i class="cc BTC-alt"></i>
+                                        </li>
+                                        <li class="usd">
+                                            <span> USD</span>
+                                            
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="profile_log dropdown">
+                                    <div class="user" data-toggle="dropdown">
+                                        <span class="name">{{request.user.username}}</span>
+                                        <span class="arrow"><i class="la la-angle-down"></i></span>
+                                    </div>
+                                    <div style="background-color: blue !important;" class="dropdown-menu dropdown-menu-right">
+                                        <a href="{% url 'dashboard' %}" class="dropdown-item">
+                                            <i class="la la-credit-card"></i> Dashboard
+                                        </a>
+                                        <a href="" class="dropdown-item">
+                                            <i class="la la-cog"></i> Settings
+                                        </a>
+                                        <a href="{% url 'logout' %}" class="dropdown-item logout">
+                                            <i class="la la-sign-out"></i> Logout
+                                        </a>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page_title section-padding" style="background-color: blue !important;">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="page_title-content">
+                        <p>Hi,
+                            <span>{{request.user.username}}</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="buy_sell mb-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-5 col-lg-5 col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="buy-sell-widget">
+                                <ul class="nav nav-tabs">
+                                    <li class="nav-item"><a style="color: #ffffff;" class="btn btn-success" data-toggle="tab">Receive</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content tab-content-default">
+                                    <div class="tab-pane fade show active" id="buy" role="tabpanel">
+                                            <form method="post" action="" class="currency_validate">
+                                            {% csrf_token %}           
+                                            <div class="form-group">
+                                                <label class="mr-sm-2">Select cryptocurrency</label>
+                                                <div class="input-group mb-3">
+                                                    <select name="pay_currency" class="form-control" style="width: 100%" required="True">
+                                                         <option value="USDTTRC20">USD Tether TRC20 (USDTTRC20)</option>
+                                                        <option value="btc">Bitcoin (BTC)</option>
+                                                        <option value="eth">Ethereum (ETH)</option>
+                                                        <option value="dodge">Dogecoin (DOGE)</option>
+                                                        <option value="trx">Tron (TRX)</option>
+                                                        <option value="sol">Solana (SOL)</option>
+                                                        <option value="ltc">Litecoin (LTC)</option>
+                                                        <option value="dot">Polkadot (DOT)</option>
+                                                        <option value="XLM">Steller Lumens (XLM)</option>
+                                                        <option value="ADA">Cardano (ADA)</option>
+                                                        <option value="axs">Axie Infinity (AXS)</option>
+                                                        <option value="floki">Floki (floki)</option>
+                                                        <option value="busderc20">Binance usd (BUSD ERC20)</option>
+                                                        <option value="dash">Dash (DASH)</option>
+                                                        <option value="etc">Ethereum classic (ETC)</option>
+                                                        <option value="xmr">Monero (XMR)</option>
+                                                        <option value="bnbbsc">Binance coin (BNBBSC)</option>
+                                                        <option value="shib">Shiba Inu (shib)</option>
+                                                        <option value="bch">Bitcoin cash (BCH)</option>
+                                                        <option value="xrp">Ripple (XRP)</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="mr-sm-2">Select Portfolio</label>
+                                                <div class="input-group mb-3">
+                                                    <select name="Portfolio" class="form-control" required="True">
+                                                        <option value="0.195">Cautious Portfolio</option>
+                                                        <option value="0.28">Conservative Portfolio</option>
+                                                        <option value="0.32">Balanced Portfolio</option>
+                                                        <option value="0.415">Advanced Portfolio</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="mr-sm-2">Select currency</label>
+                                                <div class="input-group mb-3">
+                                                    <select name="price_currency" class="form-control" required="True">
+                                                        <option value="usd">USD</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="mr-sm-2">Enter amount</label>
+                                                <div class="input-group">
+                                                    <input type="number" name="price_amount" class="form-control" required>
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-success btn-block">
+                                               submit
+                                            </button>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-7 col-md-6">
+                    <div class="row">
+                        <div class="col-xl-8">
+                            <div class="auth-form card">
+                                <div class="card-body">
+                                    <form action="#" class="identity-upload">
+                                        <div class="identity-content">
+                                            <span class="icon"><i class="fa fa-bitcoin"></i></span>
+                                            <h4>Depositing cryptocurrency on your account is easy</h4>
+                                            <p>Simply select the crypto you want to deposit, select your preferred currency then enter the amount you'll like to deposit. Click on generate address to get your unique address</p>
+                                        </div>
+
+                                        <div class="text-center">
+                                            <a href="{% url 'terms' %}" class="btn btn-success pl-5 pr-5">Terms</a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background-color: blue !important" class="footer">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-md-6">
+                    <div class="copy_right">
+                        Copyright © 2022 Cooper Hoysteds. All Rights Reserved.
+                    </div>
+                </div>
+                <div class="col-xl-6 col-md-6 text-lg-right text-center">
+                    <div id="google_translate_element"></div>
+                    <script type="text/javascript">
+                        function googleTranslateElementInit() {
+                            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+                        }
+                    </script>
+                    <script type="text/javascript" src="{% static 'translate.google.com/translate_a/element.js' %}"></script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<script src="{% static 'epiruswallet.com/epirus3/jquery.min.js' %}"></script>
+<script src="{% static 'epiruswallet.com/epirus3/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'epiruswallet.com/epirus3/waves.min.js' %}"></script>
+
+<script src="{% static 'epiruswallet.com/epirus3/toastr.min.js' %}"></script>
+
+
+<script src="{% static 'epiruswallet.com/epirus3/circle-progress.min.js' %}"></script>
+<script src="{% static 'epiruswallet.com/epirus3/circle-progress-init.js' %}"></script>
+
+
+<!--  flot-chart js -->
+<script src="{% static 'epiruswallet.com/epirus3/apexcharts.min.js' %}"></script>
+<script src="{% static 'epiruswallet.com/epirus3/apexchart-init.js' %}"></script>
+
+
+<!-- <script src="./js/dashboard.js"></script> -->
+<script src="{% static 'epiruswallet.com/epirus3/scripts.js' %}"></script>
+
+<!--Start of Tawk.to Script-->
+
+<!--End of Tawk.to Script-->
+</body>
+
+</html>

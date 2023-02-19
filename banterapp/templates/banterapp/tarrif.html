@@ -1,0 +1,27 @@
+{% extends 'banterapp/base.html' %}
+{% load static %}
+{% block body %}
+<style>
+    #text_tariff{
+        font-size: 70% !important;
+    }
+</style>
+<div class="row text-center align-items-lg-start gutter-vr-40px">
+                    <div class="col-lg-12 col-lg-12">
+                        <div class="feature feature-s6 feature-s6-1 animated fadeInUp" data-animate="fadeInUp"
+                             data-delay="0.3" style="visibility: visible; animation-delay: 0.3s;">
+                            <div id="text_tariff" class="feature-text">
+                                <h3 class="title title-sm ttu" style="color: #ffffff">Tariff Plan</h3>
+                                <p style="color: #ffffff">Daily 4%<br>
+                                    Maximum Deposit: $19,999<br>
+                                    Minimum Deposit: $200<br>
+                                    Plan Duration: 4 Days<br>
+                                    Instant Payout<br>
+                                    24/7 Live Support<br>
+                                    <button><a style="color: blue" href="{% url 'plans' %}">Get started</a></button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+     </div>
+{% endblock %}

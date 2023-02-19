@@ -1,0 +1,80 @@
+{% extends 'banterapp/base.html' %}
+{% load static %}
+{% block body %}
+
+    <main class="nk-pages tc-light">
+            <!-- // -->
+    <section class="section section-contact bg-theme tc-light" id="contact">
+
+        <div class="container">
+            <!-- Block @s  -->
+            <div class="nk-block nk-block-about">
+                <div class="row justify-content-between align-items-center gutter-vr-50px">
+                    <div class="col-lg-6">
+                        <div class="nk-block-text">
+                            <div class="nk-block-text-head">
+                                <h2 class="title title-lg ttu animated" data-animate="fadeInUp" data-delay="0.7">
+                                    Contact Us</h2>
+                                <p class="animated" data-animate="fadeInUp" data-delay="0.8">We are always open and
+                                    we welcome any questions you have for our team. If you wish to get in touch,
+                                    please fill out the form below. Someone from our team will get back to you
+                                    shortly.</p>
+                            </div>
+                          <form method="POST">
+                            {% csrf_token %}
+                              <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Name</label>
+                                <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="">
+                              </div>
+                                <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                              </div>
+                            <div class="input-group">
+                                <span class="input-group-text">Message</span>
+                                <textarea name="message" class="form-control" aria-label="With textarea"></textarea>
+                            </div>
+                              <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 text-center order-lg-first">
+                        <div class="nk-block-contact nk-block-contact-s1  animated" data-animate="fadeInUp"
+                             data-delay="0.1">
+                            <ul class="contact-list">
+                                <li class="animated" data-animate="fadeInUp" data-delay="0.2">
+                                    <em class="contact-icon fas fa-phone"></em>
+                                    <div class="contact-text">
+                                        <span>+1 (409) 205-1845</span>
+                                    </div>
+                                </li>
+                                <li class="animated" data-animate="fadeInUp" data-delay="0.3">
+                                    <em class="contact-icon fas fa-envelope"></em>
+                                    <div class="contact-text">
+                                        <span>support@cooperhoystedsinvestmentservice.com</span>
+                                    </div>
+                                </li>
+                                <li class="animated" data-animate="fadeInUp" data-delay="0.4">
+                                    <em class="contact-icon fas fa-paper-plane"></em>
+                                    <div class="contact-text">
+                                        <a href="https://api.whatsapp.com/send?phone=+14092051845&amp;text=How%20do%20I%20set%20up%20an%20account%20and%20start%20earning%3F%20"><span>Join us on WhatsApp</span></a>
+
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="nk-circle-animation nk-df-center white small"></div>
+                            <!-- .circle-animation -->
+                        </div>
+
+
+                    </div>
+                </div>
+            </div><!-- .block @e  -->
+        </div>
+    </section>
+    <!-- // -->
+
+
+    </main>
+    {% endblock %}

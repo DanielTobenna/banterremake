@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+
+	<title>Accounts</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+
+  <a class="navbar-brand" href="{% url 'home' %}">BigTC</a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+
+    <ul class="navbar-nav mr-auto">
+
+      {% if request.user.is_staff %}
+
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'admindashboard' %}">Dashboard <span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link" href="https://www.cooperhoystedsinvestmentservice.com/admin">More admin rights</a>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'confirm_deposit' %}">Confirm Deposits </a>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'confirm_withdrawal' %}">Confirm Withdrawals</a>
+      </li>
+
+      {% else %}
+
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'account_settings' %}">Settings </a>
+      </li>
+
+      {% endif %}
+
+    </ul>
+
+
+    <div class="form-inline my-2 my-lg-0">
+
+      {% if request.user.is_authenticated %}
+
+          <span style="color:#fff;">Hello, {{request.user}}</span>
+
+          <a href="{% url 'logout' %}" class="btn btn-warning" style="margin: 5px;">Logout</a>
+
+      {% else %}
+
+          <a href="{% url 'register' %}" class="btn btn-success" style="margin: 5px;">Sign up!</a>
+
+          <a href="{% url 'signin' %}"class="btn btn-warning">Login!</a>
+
+      {% endif %}
+
+    </div>
+
+
+  </div>
+
+
+</nav>
+<div class="container">
+
+<br>
+
+<div class="row">
+
+	<div class="col">
+
+		<div class="col-md">
+
+			<div class="card text-center text-white mb-3 " id="total-orders">
+
+				<div class="card-headers" id="headers">
+
+					<h5 class="card-title">Total Clients</h5>
+					<hr>
+				</div>
+
+				<div class="card-body">
+					<h3 class="card-title">{{clients_total}}</h3>
+				</div>
+
+			</div>
+
+	   </div>
+
+	</div>
+
+	<div class="col">
+
+		<div class="col-md">
+
+			<div class="card text-center text-white mb-3 " id="orders-delivered">
+
+				<div class="card-headers">
+
+					<h5 class="card-title">Total withdrawal requests</h5>
+					<hr>
+				</div>
+
+				<div class="card-body">
+					<h3 class="card-title">{{withdrawal_requests_total}}</h3>
+				</div>
+
+			</div>
+
+	   </div>
+
+	</div>
+
+	<div class="col">
+
+		<div class="col-md">
+
+			<div class="card text-center text-white mb-3 " id="orders-pending">
+
+				<div class="card-headers">
+
+					<h5 class="card-title">Total Transactions</h5>
+					<hr>
+				</div>
+
+				<div class="card-body">
+					<h3 class="card-title">{{transactions_total}}</h3>
+				</div>
+
+			</div>
+
+	   </div>
+
+	</div>
+
+
+</div>
+
+<br>
+
+<div class="row">
+
+	<div class="col-md-5">
+
+		<h5>Clients</h5>
+
+		<hr>
+
+		<div class="card card-body">
+
+			<a class="btn btn-primary btn-sm btn-block" href="https://www.cooperhoystedsinvestmentservice.com/admin">More Admin rights</a>
+
+			<table class="table table-sm">
+
+				<tr>
+
+					<th></th>
+					<th>Clients</th>
+					<th>Email</th>
+
+				</tr>
+				 {% for client in clients %}
+				<tr>
+					<td><a class="btn btn-sm btn-info" href="">View all</a></td>
+					<td>{{client}}</td>
+					<td>{{client.email_address}}</td>
+				</tr>
+				{% endfor %}
+			</table>
+
+		</div>
+
+	</div>
+
+
+	<div class="col-md-7">
+
+		<h5><a href="https://www.cooperhoystedsinvestmentservice.com/confirm_deposit/">Comfirm Payments</a></h5>
+
+		<hr>
+
+		<div class="card card-body">
+
+			<table class="table table-sm">
+
+				<tr>
+
+					<th>Client</th>
+					<th>payment_id</th>
+					<th>price_amount</th>
+					<th>Update</th>
+					<th>date_created</th>
+
+				</tr>
+
+			  {% for i in payment %}
+
+				<tr>
+
+					<td>{{i.client}}</td>
+					<td>{{i.payment_id}}</td>
+					<td>{{i.price_amount}}</td>
+					<td>{{i.date_created}}</td>
+
+				</tr>
+
+				{% endfor %}
+
+			</table>
+
+		</div>
+
+	</div>
+
+
+
+
+</div>
+
+</div>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
